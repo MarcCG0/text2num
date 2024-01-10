@@ -12,7 +12,7 @@ def readme():
 setup(
     name="text2num",
     version=VERSION,
-    description="Parse and convert numbers written in French, Spanish, English, Portuguese, German, Catalan or Russion into their digit representation.",
+    description="Parse and convert numbers written in French, Spanish, English, Portuguese, German, Catalan, Russion or Italian into their digit representation.",
     long_description=readme(),
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -26,9 +26,10 @@ setup(
         "Natural Language :: Portuguese",
         "Natural Language :: German",
         "Natural Language :: Catalan",
-        "Natural Language :: Russian"
+        "Natural Language :: Russian", 
+        "Natural Language :: Italian", 
     ],
-    keywords="French Spanish English Portuguese German Catalan Russion NLP words-to-numbers",
+    keywords="French Spanish English Portuguese German Catalan Russion Italian NLP words-to-numbers",
     url="https://github.com/allo-media/text2num",
     author="Allo-Media",
     author_email="contact@allo-media.fr",

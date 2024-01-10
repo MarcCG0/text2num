@@ -24,7 +24,8 @@ import re
 from itertools import dropwhile
 from typing import Any, Iterator, List, Sequence, Tuple, Union, Optional
 
-from .lang import LANG, Language, German, Portuguese
+from .lang import LANG, Language, German, Portuguese, Italian
+from .lang.italian import iWtoN
 from .parsers import (
     WordStreamValueParserInterface,
     WordStreamValueParser,  # we should rename this to 'WordStreamValueParserCommon'
@@ -80,8 +81,13 @@ def text2num(text: str, lang: Union[str, Language], relaxed: bool = False) -> in
         )
         num_parser.parse(text)
         return num_parser.value
+    if type(language) is Italian: 
+        # joined_text = "".join(text)
+        # print(joined_text)
+        return iWtoN.convert(text)
+
     # Default
-    else:
+    else:   
         num_parser = WordStreamValueParser(language, relaxed=relaxed)
         tokens = list(dropwhile(lambda x: x in language.ZERO, text.split()))
         if not all(num_parser.push(word, ahead) for word, ahead in look_ahead(tokens)):
