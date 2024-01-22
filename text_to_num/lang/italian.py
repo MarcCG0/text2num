@@ -216,7 +216,7 @@ class iWtoN:
             elif string != iWtoN.JOINER:
                 result.append(string)
 
-        return result if result else [array]
+        return result if result else array
 
     @staticmethod
     def compute(tokens: List[object]) -> int:
@@ -242,6 +242,11 @@ class iWtoN:
 
     @staticmethod
     def getMillion(string: str, sum: int) -> Dict[str, int]:
+
+        if 'milione' in string or 'milioni' in string:
+            sum = iWtoN.MAGNITUDE['milione'] if sum == 0 else sum * iWtoN.MAGNITUDE['milione']
+            string = string.replace('milione', '').replace('milioni', '')
+            
         if 'milione' in string:
             sum *= iWtoN.MAGNITUDE['milione']
             string = string.replace('milione', '')
