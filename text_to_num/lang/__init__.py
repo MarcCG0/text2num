@@ -33,6 +33,7 @@ from .german import German
 from .catalan import Catalan
 from .russian import Russian
 from .italian import Italian
+from .norwegian import Norwegian
 
 LANG = {
     "fr": French(),
@@ -43,4 +44,5 @@ LANG = {
     "ca": Catalan(),
     "ru": Russian(),
     "it": Italian(),
+    "no": Norwegian(),
 }
