@@ -25,6 +25,7 @@ Language support.
 """
 
 from .base import Language  # noqa: F401
+from .dutch import Dutch
 from .french import French
 from .english import English
 from .spanish import Spanish
@@ -44,5 +45,6 @@ LANG = {
     "ca": Catalan(),
     "ru": Russian(),
     "it": Italian(),
+    "nl": Dutch(),
     "no": Norwegian(),
 }
