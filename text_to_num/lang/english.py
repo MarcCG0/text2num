@@ -32,6 +32,8 @@ from .base import Language
 # Those words multiplies lesser numbers (see Rules)
 # Special case: "hundred" is processed apart.
 MULTIPLIERS = {
+    "hundred": 100,
+    "hundreds": 100,
     "thousand": 1_000,
     "thousands": 1_000,
     "million": 1_000_000,
@@ -117,7 +119,7 @@ class English(Language):
 
     AND_NUMS: Set[str] = set()
     AND = "and"
-    NEVER_IF_ALONE = {"one"}
+    NEVER_IF_ALONE = {"one", "o"}
 
     # Relaxed composed numbers (two-words only)
     # start => (next, target)
